@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply Leave</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <h2>Apply for Leave</h2>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="apply_leave.html" class="active">Apply Leave</a>
+      <a href="leave_status.html">Leave Status</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <form class="leave-form">
+      <label>Employee ID:</label>
+      <input type="text" placeholder="E.g. EMP123" required>
+
+      <label>Leave Type:</label>
+      <select required>
+        <option value="">Select</option>
+        <option>Sick Leave</option>
+        <option>Casual Leave</option>
+        <option>Paid Leave</option>
+      </select>
+
+      <label>From Date:</label>
+      <input type="date" required>
+
+      <label>To Date:</label>
+      <input type="date" required>
+
+      <label>Reason:</label>
+      <textarea placeholder="Enter reason..." required></textarea>
+
+      <button type="submit" class="btn">Submit Request</button>
+    </form>
+  </main>
+
+  <footer>© 2025 Employee Leave Management System</footer>
+</body>
+</html>
 
