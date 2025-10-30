@@ -1,133 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Employee Leave Management System</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 40px;
-      background-color: #f5f6fa;
-      text-align: center;
-    }
-    h1 {
-      color: #2c3e50;
-    }
-    .form-box {
-      background: white;
-      width: 400px;
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: left;
-    }
-    label {
-      display: block;
-      margin: 10px 0 5px;
-    }
-    input, select {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      margin-top: 15px;
-      padding: 10px 15px;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #2980b9;
-    }
-    table {
-      width: 90%;
-      margin: 30px auto;
-      border-collapse: collapse;
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: center;
-    }
-    th {
-      background-color: #3498db;
-      color: white;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Employee Leave Management System</h1>
+  <header>
+    <h1>Employee Leave Management System</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="apply_leave.html">Apply Leave</a>
+      <a href="leave_status.html">Leave Status</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
 
-  <div class="form-box">
-    <label>Employee Name:</label>
-    <input type="text" id="empName" placeholder="Enter employee name" required>
+  <main>
+    <h2>Welcome to the Employee Portal</h2>
+    <p>This system allows employees to apply for leave, track their status, and view company leave policies — all in one place.</p>
 
-    <label>Leave Type:</label>
-    <select id="leaveType">
-      <option value="Casual Leave">Casual Leave</option>
-      <option value="Sick Leave">Sick Leave</option>
-      <option value="Earned Leave">Earned Leave</option>
-    </select>
+    <section class="cards">
+      <div class="card">
+        <h3>Apply for Leave</h3>
+        <p>Submit your leave request easily.</p>
+        <a href="apply_leave.html" class="btn">Go</a>
+      </div>
+      <div class="card">
+        <h3>Check Leave Status</h3>
+        <p>View approval or pending requests.</p>
+        <a href="leave_status.html" class="btn">View</a>
+      </div>
+      <div class="card">
+        <h3>Know More</h3>
+        <p>Learn about company policies.</p>
+        <a href="about.html" class="btn">About</a>
+      </div>
+    </section>
+  </main>
 
-    <label>From Date:</label>
-    <input type="date" id="fromDate">
-
-    <label>To Date:</label>
-    <input type="date" id="toDate">
-
-    <button onclick="applyLeave()">Apply Leave</button>
-  </div>
-
-  <h2>Leave Applications</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Employee Name</th>
-        <th>Leave Type</th>
-        <th>From</th>
-        <th>To</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody id="leaveTable"></tbody>
-  </table>
-
-  <script>
-    function applyLeave() {
-      const name = document.getElementById('empName').value;
-      const type = document.getElementById('leaveType').value;
-      const from = document.getElementById('fromDate').value;
-      const to = document.getElementById('toDate').value;
-
-      if (!name || !from || !to) {
-        alert("Please fill all details!");
-        return;
-      }
-
-      const table = document.getElementById('leaveTable');
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${name}</td>
-        <td>${type}</td>
-        <td>${from}</td>
-        <td>${to}</td>
-        <td style="color: green;">Pending</td>
-      `;
-      table.appendChild(row);
-
-      // Clear fields
-      document.getElementById('empName').value = '';
-      document.getElementById('fromDate').value = '';
-      document.getElementById('toDate').value = '';
-    }
-  </script>
+  <footer>© 2025 Employee Leave Management System | Designed by Achintya</footer>
 </body>
 </html>
