@@ -1,45 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Employee Leave Management System</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Leave Management System - Login</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
+<body class="login-page">
+  <div class="login-container">
     <h1>Employee Leave Management System</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="apply_leave.html">Apply Leave</a>
-      <a href="leave_status.html">Leave Status</a>
-      <a href="about.html">About</a>
-    </nav>
-  </header>
+    <p class="subtitle">Sign in to continue</p>
+    <form onsubmit="login(event)">
+      <input type="text" placeholder="Employee ID" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
 
-  <main>
-    <h2>Welcome to the Employee Portal</h2>
-    <p>This system allows employees to apply for leave, track their status, and view company leave policies — all in one place.</p>
-
-    <section class="cards">
-      <div class="card">
-        <h3>Apply for Leave</h3>
-        <p>Submit your leave request easily.</p>
-        <a href="apply_leave.html" class="btn">Go</a>
-      </div>
-      <div class="card">
-        <h3>Check Leave Status</h3>
-        <p>View approval or pending requests.</p>
-        <a href="leave_status.html" class="btn">View</a>
-      </div>
-      <div class="card">
-        <h3>Know More</h3>
-        <p>Learn about company policies.</p>
-        <a href="about.html" class="btn">About</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>© 2025 Employee Leave Management System | Designed by Achintya</footer>
+  <script>
+    function login(e) {
+      e.preventDefault();
+      window.location.href = 'dashboard.html';
+    }
+  </script>
 </body>
 </html>
+
